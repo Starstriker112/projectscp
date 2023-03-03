@@ -1,2 +1,3 @@
 # projectscp
-a project repository for the project designated as Project: SCP, a sandbox management strategy game
+a project repository for the project designated as Project: SCP, a sandbox management strategy game.
+Centered around building a containment facility and containing the anomalous that threatens world security and public trust as well as the public norms of society. Manage your facility to the best of your ability, research newly contained anomalies, create and form specialized task forces to go out and find new anomalies to bring back to contain within your facility or be able to completely secure them off-site, make sure all your personnel, utilities and containment needs are met and that your facility is operating well within the standards you wish it to be.
