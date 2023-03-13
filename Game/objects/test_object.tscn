@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2girgg13c8hb"]
 
 [ext_resource type="Texture2D" uid="uid://cfjje8ay4rd62" path="res://aseprite/boxes.png" id="1_5rmbv"]
-[ext_resource type="Script" path="res://objects/test_object.gd" id="1_biid2"]
+[ext_resource type="Script" path="res://Game/objects/test_object.gd" id="1_6rgre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vjhs"]
 size = Vector2(32, 33)
 
 [node name="TestObject" type="Area2D"]
-script = ExtResource("1_biid2")
+script = ExtResource("1_6rgre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5rmbv")
@@ -16,3 +16,7 @@ region_rect = Rect2(0, 79, 32, 33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5vjhs")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
