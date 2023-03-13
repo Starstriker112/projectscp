@@ -1,16 +1,32 @@
 extends Area2D
 
-@onready var test_object = preload("res://objects/test_object.tscn")
+var can_drag
+var selected = false
+var sprite
+var col
+
+func _ready():
+	sprite = get_node("Sprite2D")
+	col = get_node("CollisionShape2D")
 
 func  _unhandled_input(event):
-		if Input.is_action_just_pressed("ui_leftclick"):
-			var clone = test_object.instantiate()
-			clone.position = get_global_mouse_position()
-			get_parent().add_child(clone)
-			set_process_input(false)
-		else:
-			set_process_input(true)
+	if Input.is_action_just_pressed("ui_leftclick"):
+		if selected:
+			can_drag = false
+
+	if Input.is_action_just_pressed("reset"):
+		queue_free()
 
 func _process(delta):
-	if is_processing_input():
-		position = get_global_mouse_position()
+	if can_drag:
+		self.position = get_global_mouse_position()
+
+func _on_mouse_entered():
+	selected = true
+
+func _on_mouse_exited():
+	selected = false
+
+func _on_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed("ui_rightclick") and event.pressed:
+		queue_free()
