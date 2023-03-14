@@ -10,10 +10,6 @@ func _ready():
 	col = get_node("CollisionShape2D")
 
 func  _unhandled_input(event):
-	if Input.is_action_just_pressed("ui_leftclick"):
-		if selected:
-			can_drag = false
-
 	if Input.is_action_just_pressed("reset"):
 		queue_free()
 
@@ -23,10 +19,19 @@ func _process(delta):
 
 func _on_mouse_entered():
 	selected = true
+	Global.can_create = false
 
 func _on_mouse_exited():
 	selected = false
+	Global.can_create = true
 
 func _on_input_event(viewport, event, shape_idx):
-	if Input.is_action_just_pressed("ui_rightclick") and event.pressed:
-		queue_free()
+	if Input.is_action_just_pressed("ui_rightclick"):
+		if event.pressed:
+			queue_free() #destroy instance
+		#if selected:
+			#can_drag = true #drag objects
+		
+	if Input.is_action_just_pressed("ui_leftclick"):
+		if selected:
+			can_drag = false
