@@ -1,3 +1,5 @@
+res://Game/world/world.gd
+res://Game/menus/scp_found.gd
+res://Game/menus/scp_found.tscn
 res://Game/world/world.tscn
-res://Game/objects/test_object.gd
 res://Game/objects/test_object.tscn

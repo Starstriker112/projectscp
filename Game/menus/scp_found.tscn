@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd3dm83ijx3w0"]
+
+[ext_resource type="Script" path="res://Game/menus/scp_found.gd" id="1_4bd25"]
+
+[node name="scp_found" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_right = 31.0
+offset_bottom = 127.0
+grow_horizontal = 2
+script = ExtResource("1_4bd25")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 104.0
+offset_bottom = 37.0
+scale = Vector2(2, 2)
+text = "SCP found"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="send" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 101.0
+offset_bottom = 124.0
+text = "Send team"
+
+[node name="cancel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 79.0
+offset_right = 209.0
+offset_bottom = 123.0
+text = "Cancel"
+
+[connection signal="pressed" from="send" to="." method="_on_send_pressed"]
+[connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]

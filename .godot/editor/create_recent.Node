@@ -1,3 +1,7 @@
+Control
+Button
+Label
+ColorRect
 Sprite2D
 CollisionShape2D
 Area2D
