@@ -19,6 +19,10 @@ boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 
 Global="*res://Game/global.gd"
 
+[display]
+
+window/size/mode=2
+
 [editor]
 
 movie_writer/movie_file="D:/projectscp/movies/scp_found.avi"
