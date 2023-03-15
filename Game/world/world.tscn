@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cf1ywe3t20kvl"]
+[gd_scene load_steps=3 format=3 uid="uid://cf1ywe3t20kvl"]
 
 [ext_resource type="Script" path="res://Game/world/world.gd" id="1_1tid1"]
+[ext_resource type="PackedScene" uid="uid://di31tjgnicv7e" path="res://Game/AI/walk.tscn" id="2_qvvwq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1tid1")
@@ -11,5 +12,8 @@ offset_top = 37.0
 offset_right = 1058.0
 offset_bottom = 75.0
 text = "SCP found"
+
+[node name="walk" parent="." instance=ExtResource("2_qvvwq")]
+position = Vector2(487, 369)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
