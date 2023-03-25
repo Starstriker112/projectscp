@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://olf32fbnmnh6"]
+
+[ext_resource type="Script" path="res://Game/world/personnel.gd" id="1_4btn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ksukp"]
+size = Vector2(40, 40)
+
+[node name="Personnel" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_4btn7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ksukp")

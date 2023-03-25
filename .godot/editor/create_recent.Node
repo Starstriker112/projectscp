@@ -1,7 +1,14 @@
-Timer
-CharacterBody2D
+Marker2D
+NavigationAgent2D
+NavigationLink2D
+TileMap
+CollisionPolygon2D
+StaticBody2D
 CollisionShape2D
+Node2D
 ColorRect
+CharacterBody2D
+Timer
 RigidBody2D
 Control
 Button
