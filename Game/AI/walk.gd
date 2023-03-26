@@ -8,9 +8,9 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	var nextToggleSeconds = rng.randi_range(5, 15)
 	$Timer.start(nextToggleSeconds)
-
-func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
+	
+func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
