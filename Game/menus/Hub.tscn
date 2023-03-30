@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqeijj3udc3h6"]
+
+[ext_resource type="Script" path="res://Game/menus/Hub.gd" id="1_un1j3"]
+
+[node name="Hub" type="Control"]
+editor_description = "This is where the player can enter in different scenes."
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_un1j3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 26.0
+scale = Vector2(2, 2)
+text = "Go to:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 138.0
+offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Test world"
+
+[node name="PowerGenerator" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Power Generator"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/PowerGenerator" to="." method="_on_power_generator_pressed"]

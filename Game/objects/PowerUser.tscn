@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://0cl071ipxk35"]
+
+[ext_resource type="Script" path="res://Game/objects/PowerUser.gd" id="1_25ihe"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eg2qt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no3v0"]
+size = Vector2(1, 1)
+
+[node name="PowerUser" type="StaticBody2D"]
+script = ExtResource("1_25ihe")
+
+[node name="Mesh" type="MeshInstance2D" parent="."]
+position = Vector2(50, 75)
+scale = Vector2(99.188, -160)
+mesh = SubResource("BoxMesh_eg2qt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 75)
+rotation = -3.14159
+scale = Vector2(99.187, -160)
+shape = SubResource("RectangleShape2D_no3v0")

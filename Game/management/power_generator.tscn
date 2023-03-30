@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://dicrdgqbbjfjs"]
+
+[ext_resource type="Script" path="res://Game/management/PowerGen.gd" id="1_n5jot"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o63tq"]
+size = Vector3(210, 210, 1)
+
+[sub_resource type="Gradient" id="Gradient_jdjaa"]
+offsets = PackedFloat32Array(0, 0.940594, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.554455, 0.554455, 0.554455, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i83q6"]
+gradient = SubResource("Gradient_jdjaa")
+
+[node name="Power Generator" type="Node2D"]
+script = ExtResource("1_n5jot")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(553, 300)
+scale = Vector2(2.124, 2)
+mesh = SubResource("BoxMesh_o63tq")
+texture = SubResource("GradientTexture2D_i83q6")
+
+[node name="Label" type="Label" parent="MeshInstance2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_right = 40.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Generator
+"
+
+[node name="Generating" type="Label" parent="."]
+offset_left = 336.0
+offset_top = 13.0
+offset_right = 775.0
+offset_bottom = 89.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 780.0
+offset_top = 93.0
+offset_right = 1048.0
+offset_bottom = 232.0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start generating"
+
+[node name="Stop" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Stop generating"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Stop" to="." method="_on_Stop_pressed"]
