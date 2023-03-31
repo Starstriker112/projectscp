@@ -20,3 +20,9 @@ position = Vector2(50, 75)
 rotation = -3.14159
 scale = Vector2(99.187, -160)
 shape = SubResource("RectangleShape2D_no3v0")
+
+[node name="WasteTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="WasteTimer" to="." method="_on_waste_timer_timeout"]
