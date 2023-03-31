@@ -3,6 +3,7 @@ extends Node2D
 var test_object = preload("res://Game/objects/test_object.tscn")
 var walk_test = preload("res://Game/AI/walk.tscn")
 var scp_found = preload("res://Game/menus/scp_found.tscn")
+var animated_sprite = preload("res://Game/objects/animated_sprite.tscn")
 var mode = 0
 @onready var astar = AStar2D.new()
 
@@ -61,10 +62,17 @@ func _unhandled_input(event):
 					clone.position = get_global_mouse_position()
 					get_parent().add_child(clone)
 					Global.blocks -= 1
+				elif Global.item_selected == 3:
+					var clone = animated_sprite.instantiate()
+					clone.position = get_global_mouse_position()
+					get_parent().add_child(clone)
+					Global.blocks -= 1
 	if event.is_action_pressed("item1"):
 		Global.item_selected = 1
 	if event.is_action_pressed("item2"):
 		Global.item_selected = 2
+	if event.is_action_pressed("item3"):
+		Global.item_selected = 3
 
 func _physics_process(delta):
 	_on_get_path($Personnel, $walk.global_position)
@@ -78,4 +86,4 @@ func _on_hub_pressed():
 	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
 
 func _process(delta):
-	$Label.text = str(Global.blocks)
+	$Label.text = "Blocks: "+str(Global.blocks)
