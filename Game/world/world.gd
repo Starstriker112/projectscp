@@ -50,14 +50,17 @@ func _on_get_path(character: Personnel, final_path: Vector2):
 func _unhandled_input(event):
 	if Global.can_create:
 		if event.is_action_pressed("ui_leftclick"):
-			if Global.item_selected == 1:
-				var clone = test_object.instantiate()
-				clone.position = get_global_mouse_position()
-				get_parent().add_child(clone)
-			elif Global.item_selected == 2:
-				var clone = walk_test.instantiate()
-				clone.position = get_global_mouse_position()
-				get_parent().add_child(clone)
+			if Global.blocks != 0:
+				if Global.item_selected == 1:
+					var clone = test_object.instantiate()
+					clone.position = get_global_mouse_position()
+					get_parent().add_child(clone)
+					Global.blocks -= 1
+				elif Global.item_selected == 2:
+					var clone = walk_test.instantiate()
+					clone.position = get_global_mouse_position()
+					get_parent().add_child(clone)
+					Global.blocks -= 1
 	if event.is_action_pressed("item1"):
 		Global.item_selected = 1
 	if event.is_action_pressed("item2"):
@@ -73,3 +76,6 @@ func _on_button_pressed():
 
 func _on_hub_pressed():
 	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
+
+func _process(delta):
+	$Label.text = str(Global.blocks)
