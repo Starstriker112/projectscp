@@ -86,4 +86,7 @@ func _on_hub_pressed():
 	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
 
 func _process(delta):
-	$Label.text = "Blocks: "+str(Global.blocks)
+	$Blocks.text = "Blocks: "+str(Global.blocks)
+	$Money.text = "Money: "+str(Global.money)
+	$Day.text = "Day "+str(Global.days)
+	$Month.text = "Month "+str(Global.months)
