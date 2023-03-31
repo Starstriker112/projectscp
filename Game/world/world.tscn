@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cf1ywe3t20kvl"]
+[gd_scene load_steps=16 format=3 uid="uid://cf1ywe3t20kvl"]
 
 [ext_resource type="Script" path="res://Game/world/world.gd" id="1_1tid1"]
 [ext_resource type="PackedScene" uid="uid://di31tjgnicv7e" path="res://Game/AI/walk.tscn" id="2_qvvwq"]
 [ext_resource type="PackedScene" uid="uid://olf32fbnmnh6" path="res://personnel.tscn" id="3_elqhe"]
 [ext_resource type="Texture2D" uid="uid://c1wh1c45xktlu" path="res://aseprite/tiles.png" id="4_4idb7"]
+[ext_resource type="PackedScene" uid="uid://0cl071ipxk35" path="res://Game/objects/PowerUser.tscn" id="5_sx0di"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oxotj"]
 
@@ -148,12 +149,20 @@ sources/1 = SubResource("TileSetAtlasSource_nw2l4")
 [node name="World" type="Node2D"]
 script = ExtResource("1_1tid1")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 963.0
-offset_top = 37.0
-offset_right = 1058.0
-offset_bottom = 75.0
+[node name="SCP_found" type="Button" parent="."]
+offset_left = 1041.0
+offset_top = 17.0
+offset_right = 1136.0
+offset_bottom = 55.0
 text = "SCP found"
+
+[node name="Hub" type="Button" parent="."]
+offset_left = 976.0
+offset_top = 21.0
+offset_right = 1017.0
+offset_bottom = 52.0
+text = "Hub
+"
 
 [node name="walk" parent="." instance=ExtResource("2_qvvwq")]
 position = Vector2(487, 369)
@@ -178,4 +187,7 @@ layer_1/tile_data = PackedInt32Array(524288, 65537, 0, 0, 65537, 0, 65536, 65537
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(802, 613)
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="PowerUser" parent="." instance=ExtResource("5_sx0di")]
+
+[connection signal="pressed" from="SCP_found" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Hub" to="." method="_on_hub_pressed"]

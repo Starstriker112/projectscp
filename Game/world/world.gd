@@ -7,6 +7,7 @@ var mode = 0
 @onready var astar = AStar2D.new()
 
 func _ready():
+	Global.generating_energy = true
 	$Personnel.get_walking_path.connect(_on_get_path)
 	_on_get_path($Personnel, $Marker2D.global_position)
 	_create_path_finding_routes()
@@ -69,3 +70,6 @@ func _on_button_pressed():
 	var i = scp_found.instantiate()
 	i.position.y = 10
 	get_parent().add_child(i)
+
+func _on_hub_pressed():
+	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
