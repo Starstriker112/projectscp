@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://bx7w03joddoir"]
+
+[ext_resource type="Script" path="res://Game/management/waste.gd" id="1_sxsyw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1634j"]
+size = Vector3(2, 5, 1)
+
+[sub_resource type="Gradient" id="Gradient_m0nfn"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_50mq2"]
+gradient = SubResource("Gradient_m0nfn")
+width = 128
+height = 128
+fill_from = Vector2(0.399083, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lov3a"]
+size = Vector3(5, 5, 1)
+
+[sub_resource type="Gradient" id="Gradient_jytqn"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rtia3"]
+gradient = SubResource("Gradient_jytqn")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_shugt"]
+
+[sub_resource type="Gradient" id="Gradient_agwx6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7l60j"]
+gradient = SubResource("Gradient_agwx6")
+fill_from = Vector2(0, 0.0321101)
+fill_to = Vector2(0.229358, 1)
+
+[node name="waste_filtrator_and_collctor" type="Node2D"]
+script = ExtResource("1_sxsyw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(184, 70)
+scale = Vector2(13, 27.6)
+mesh = SubResource("BoxMesh_1634j")
+texture = SubResource("GradientTexture2D_50mq2")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(300, 70)
+scale = Vector2(13, 27.6)
+mesh = SubResource("BoxMesh_1634j")
+texture = SubResource("GradientTexture2D_50mq2")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+position = Vector2(75, 174)
+rotation = 1.5708
+scale = Vector2(13, 30)
+mesh = SubResource("BoxMesh_1634j")
+texture = SubResource("GradientTexture2D_50mq2")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="."]
+position = Vector2(75, 302)
+rotation = 1.5708
+scale = Vector2(13, 30)
+mesh = SubResource("BoxMesh_1634j")
+texture = SubResource("GradientTexture2D_50mq2")
+
+[node name="MeshInstance2D5" type="MeshInstance2D" parent="."]
+position = Vector2(424, 240)
+rotation = 1.5708
+scale = Vector2(13, 30)
+mesh = SubResource("BoxMesh_1634j")
+texture = SubResource("GradientTexture2D_50mq2")
+
+[node name="Filtrator" type="MeshInstance2D" parent="."]
+position = Vector2(244, 217)
+scale = Vector2(50, 42.825)
+mesh = SubResource("BoxMesh_lov3a")
+texture = SubResource("GradientTexture2D_rtia3")
+
+[node name="F_Label" type="Label" parent="."]
+offset_left = 121.0
+offset_top = 112.0
+offset_right = 367.0
+offset_bottom = 181.0
+text = "Waste Filtrator"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collector" type="MeshInstance2D" parent="."]
+position = Vector2(651, 255)
+rotation = 1.5708
+scale = Vector2(292.387, 343.366)
+mesh = SubResource("BoxMesh_shugt")
+texture = SubResource("GradientTexture2D_7l60j")
+
+[node name="C_space" type="Label" parent="."]
+offset_left = 628.0
+offset_top = 316.0
+offset_right = 668.0
+offset_bottom = 342.0
+text = "50%"
+
+[node name="C_label" type="Label" parent="."]
+offset_left = 591.0
+offset_top = 161.0
+offset_right = 712.0
+offset_bottom = 187.0
+text = "Waste Collector"
+
+[node name="burn_waste" type="Button" parent="."]
+offset_left = 829.0
+offset_top = 111.0
+offset_right = 927.0
+offset_bottom = 142.0
+text = "Burn Waste"
+
+[connection signal="pressed" from="burn_waste" to="." method="_on_burn_waste_pressed"]

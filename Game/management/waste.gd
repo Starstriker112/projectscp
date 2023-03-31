@@ -1,6 +1,6 @@
-extends StaticBody2D
+extends Node2D
 
-@export var power : int
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -8,9 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	Global.generated_power -= power/10*delta
+	$C_space.text = str(Global.waste)+"%"
 
-func _on_waste_timer_timeout():
-	Global.waste += 1
-	$WasteTimer.start(60)
-	print(Global.waste)
+func _on_burn_waste_pressed():
+	Global.waste = 0

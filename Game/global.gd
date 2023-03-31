@@ -5,6 +5,7 @@ var item_selected = 1
 var generating_energy
 var generated_power = 0
 var blocks = 10
+var waste = 0
 
 func _process(delta):
 	if generating_energy:
