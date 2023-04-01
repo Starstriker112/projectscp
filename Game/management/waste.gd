@@ -12,3 +12,7 @@ func _process(delta):
 
 func _on_burn_waste_pressed():
 	Global.waste = 0
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")

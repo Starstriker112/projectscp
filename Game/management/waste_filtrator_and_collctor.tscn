@@ -111,4 +111,10 @@ offset_right = 927.0
 offset_bottom = 142.0
 text = "Burn Waste"
 
+[node name="Back" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
 [connection signal="pressed" from="burn_waste" to="." method="_on_burn_waste_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

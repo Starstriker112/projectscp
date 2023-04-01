@@ -21,10 +21,8 @@ func _ready():
 func _process(delta):
 	if generating_energy:
 		generated_power += 1*delta
-		print("Generating energy")
-		print(generated_power)
 	else:
-		print("Not generating energy")
+		pass
 		
 func _days_timeout():
 	print(str(days)+" "+str(months))
