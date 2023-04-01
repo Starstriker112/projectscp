@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$C_space.text = str(Global.waste)+"%"
+	$C_space.text = str(int(Global.waste))+"%"
 
 func _on_burn_waste_pressed():
 	Global.waste = 0

@@ -25,3 +25,20 @@ color = Color(0, 1, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ksukp")
+
+[node name="WaterTimer" type="Timer" parent="."]
+wait_time = 240.0
+
+[node name="WasteTimer" type="Timer" parent="."]
+wait_time = 240.0
+
+[node name="FoodTimer" type="Timer" parent="."]
+wait_time = 360.0
+
+[node name="BowelTimer" type="Timer" parent="."]
+wait_time = 600.0
+
+[connection signal="timeout" from="WaterTimer" to="." method="_on_water_timer_timeout"]
+[connection signal="timeout" from="WasteTimer" to="." method="_on_waste_timer_timeout"]
+[connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
+[connection signal="timeout" from="BowelTimer" to="." method="_on_bowel_timer_timeout"]

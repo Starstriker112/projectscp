@@ -27,8 +27,4 @@ shape = SubResource("RectangleShape2D_x4ebp")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="WaterTimer" type="Timer" parent="."]
-wait_time = 240.0
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="WaterTimer" to="." method="_on_water_timer_timeout"]
