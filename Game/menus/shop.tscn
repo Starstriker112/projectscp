@@ -33,10 +33,10 @@ vertical_alignment = 1
 
 [node name="Block_Section" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -574.0
+offset_left = -525.0
 offset_top = -257.0
-offset_right = -354.0
-offset_bottom = 327.0
+offset_right = -305.0
+offset_bottom = -68.0
 
 [node name="Label" type="Label" parent="Block_Section"]
 layout_mode = 2
@@ -64,10 +64,10 @@ text = "100 Blocks (500$)"
 
 [node name="Water_section" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = -338.0
+offset_left = -268.0
 offset_top = -259.0
-offset_right = -118.0
-offset_bottom = 325.0
+offset_right = -48.0
+offset_bottom = -71.0
 
 [node name="Label" type="Label" parent="Water_section"]
 layout_mode = 2
@@ -93,6 +93,68 @@ text = "50% Water (50$)"
 layout_mode = 2
 text = "Complete refill (100$)"
 
+[node name="Food_section" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -257.0
+offset_right = 209.0
+offset_bottom = -66.0
+
+[node name="Label" type="Label" parent="Food_section"]
+layout_mode = 2
+text = "Food"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Food_section"]
+layout_mode = 2
+
+[node name="1 Food" type="Button" parent="Food_section"]
+layout_mode = 2
+text = "1 portion of food (15$)"
+
+[node name="10 Food" type="Button" parent="Food_section"]
+layout_mode = 2
+text = "10 portions of food (150$)"
+
+[node name="50 Food" type="Button" parent="Food_section"]
+layout_mode = 2
+text = "50 protions of food (750$)"
+
+[node name="100 Food" type="Button" parent="Food_section"]
+layout_mode = 2
+text = "100 protions of food (1500$)"
+
+[node name="CleaningKit_section" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = -259.0
+offset_right = 488.0
+offset_bottom = -66.0
+
+[node name="Label" type="Label" parent="CleaningKit_section"]
+layout_mode = 2
+text = "Cleaning Kits"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CleaningKit_section"]
+layout_mode = 2
+
+[node name="1 Kit" type="Button" parent="CleaningKit_section"]
+layout_mode = 2
+text = "1 Cleaning Kit (35$)"
+
+[node name="10 Kits" type="Button" parent="CleaningKit_section"]
+layout_mode = 2
+text = "10 Cleaning (350$)"
+
+[node name="50 Kits" type="Button" parent="CleaningKit_section"]
+layout_mode = 2
+text = "50 Cleaning Kits (1750$)"
+
+[node name="100 Kits" type="Button" parent="CleaningKit_section"]
+layout_mode = 2
+text = "100 Cleaning Kits (3500$)"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Block_Section/1 Block" to="." method="_on_1_block_pressed"]
 [connection signal="pressed" from="Block_Section/10 Blocks" to="." method="_on_10_blocks_pressed"]
@@ -102,3 +164,11 @@ text = "Complete refill (100$)"
 [connection signal="pressed" from="Water_section/10 Water" to="." method="_on_10_water_pressed"]
 [connection signal="pressed" from="Water_section/50 Water" to="." method="_on_50_water_pressed"]
 [connection signal="pressed" from="Water_section/Complete refill" to="." method="_on_complete_refill_pressed"]
+[connection signal="pressed" from="Food_section/1 Food" to="." method="_on_1_food_pressed"]
+[connection signal="pressed" from="Food_section/10 Food" to="." method="_on_10_food_pressed"]
+[connection signal="pressed" from="Food_section/50 Food" to="." method="_on_50_food_pressed"]
+[connection signal="pressed" from="Food_section/100 Food" to="." method="_on_100_food_pressed"]
+[connection signal="pressed" from="CleaningKit_section/1 Kit" to="." method="_on_1_kit_pressed"]
+[connection signal="pressed" from="CleaningKit_section/10 Kits" to="." method="_on_10_kits_pressed"]
+[connection signal="pressed" from="CleaningKit_section/50 Kits" to="." method="_on_50_kits_pressed"]
+[connection signal="pressed" from="CleaningKit_section/100 Kits" to="." method="_on_100_kits_pressed"]

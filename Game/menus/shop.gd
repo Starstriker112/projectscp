@@ -43,3 +43,43 @@ func _on_complete_refill_pressed():
 	if Global.money >= 100:
 		Global.money -= 100
 		Global.water = 100
+
+func _on_1_food_pressed():
+	if Global.money >= 15:
+		Global.money -= 15
+		Global.food_portions += 1
+
+func _on_10_food_pressed():
+	if Global.money >= 150:
+		Global.money -= 150
+		Global.food_portions += 10
+
+func _on_50_food_pressed():
+	if Global.money >= 750:
+		Global.money -= 750
+		Global.food_portions += 50
+
+func _on_100_food_pressed():
+	if Global.money >= 1500:
+		Global.money -= 1500
+		Global.food_portions += 100
+
+func _on_1_kit_pressed():
+	if Global.money >= 35:
+		Global.money -= 35
+		Global.c_kits += 1
+
+func _on_10_kits_pressed():
+	if Global.money >= 350:
+		Global.money -= 350
+		Global.c_kits += 10
+
+func _on_50_kits_pressed():
+	if Global.money >= 1750:
+		Global.money -= 1750
+		Global.c_kits += 50
+
+func _on_100_kits_pressed():
+	if Global.money >= 3500:
+		Global.money -= 3500
+		Global.c_kits += 100

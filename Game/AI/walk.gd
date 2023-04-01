@@ -8,8 +8,6 @@ func _ready():
 	var rng = RandomNumberGenerator.new()
 	var nextToggleSeconds = rng.randi_range(5, 15)
 	$Timer.start(nextToggleSeconds)
-	$WaterTimer.start(240)
-	#$WaterTimer.start(10)
 	velocity = position.direction_to(target) * speed
 	
 func _physics_process(delta):
@@ -24,9 +22,3 @@ func _on_timer_timeout():
 	target = Vector2(rndX, rndY)
 	var nextToggleSeconds = rng.randi_range(5, 10)
 	$Timer.start(nextToggleSeconds)
-
-
-func _on_water_timer_timeout():
-	Global.water -= 1
-	$WaterTimer.start(240)
-	#$WaterTimer.start(10)
