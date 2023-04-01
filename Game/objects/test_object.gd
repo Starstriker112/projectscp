@@ -4,9 +4,11 @@ var can_drag
 var selected = false
 var sprite
 var col
+var parent_name
 
 func _ready():
-	pass
+	parent_name = get_parent().name
+	col = get_node("CollisionShape2D")
 
 func  _unhandled_input(event):
 	if Input.is_action_just_pressed("reset"):
@@ -15,6 +17,12 @@ func  _unhandled_input(event):
 func _process(delta):
 	if can_drag:
 		self.position = get_global_mouse_position()
+	if get_parent().name != parent_name:
+		hide()
+		$CollisionShape2D.disabled = true
+	else:
+		show()
+		$CollisionShape2D.disabled = false
 
 func _on_mouse_entered():
 	selected = true

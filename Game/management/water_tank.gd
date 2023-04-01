@@ -8,11 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$C_space.text = str(Global.waste)+"%"
-
-func _on_burn_waste_pressed():
-	Global.waste = 0
-
+	$"Water Left".text = str(Global.water)+"%"
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")

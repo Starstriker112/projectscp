@@ -8,3 +8,9 @@ func _on_button_pressed():
 
 func _on_waste_collector_pressed():
 	get_tree().change_scene_to_file("res://Game/management/waste_filtrator_and_collctor.tscn")
+
+func _on_shop_pressed():
+	get_tree().change_scene_to_file("res://Game/menus/shop.tscn")
+
+func _on_water_tank_pressed():
+	get_tree().change_scene_to_file("res://Game/management/water_tank.tscn")

@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx6ikabqgf84r"]
+
+[ext_resource type="Script" path="res://Game/menus/shop.gd" id="1_6s3uh"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6s3uh")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 529.0
+offset_top = -328.0
+offset_right = 576.0
+offset_bottom = -297.0
+text = "Back"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -570.0
+offset_top = -321.0
+offset_right = 580.0
+offset_bottom = -258.0
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Block_Section" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -574.0
+offset_top = -257.0
+offset_right = -354.0
+offset_bottom = 327.0
+
+[node name="Label" type="Label" parent="Block_Section"]
+layout_mode = 2
+text = "Blocks"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Block_Section"]
+layout_mode = 2
+
+[node name="1 Block" type="Button" parent="Block_Section"]
+layout_mode = 2
+text = "1 Block (5$)"
+
+[node name="10 Blocks" type="Button" parent="Block_Section"]
+layout_mode = 2
+text = "10 Blocks (50$)"
+
+[node name="50 Blocks" type="Button" parent="Block_Section"]
+layout_mode = 2
+text = "50 Blocks (250$)"
+
+[node name="100 Blocks" type="Button" parent="Block_Section"]
+layout_mode = 2
+text = "100 Blocks (500$)"
+
+[node name="Water_section" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -338.0
+offset_top = -259.0
+offset_right = -118.0
+offset_bottom = 325.0
+
+[node name="Label" type="Label" parent="Water_section"]
+layout_mode = 2
+text = "Water"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Water_section"]
+layout_mode = 2
+
+[node name="1 Water" type="Button" parent="Water_section"]
+layout_mode = 2
+text = "1% Water (1$)"
+
+[node name="10 Water" type="Button" parent="Water_section"]
+layout_mode = 2
+text = "10% Water (10$)"
+
+[node name="50 Water" type="Button" parent="Water_section"]
+layout_mode = 2
+text = "50% Water (50$)"
+
+[node name="Complete refill" type="Button" parent="Water_section"]
+layout_mode = 2
+text = "Complete refill (100$)"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Block_Section/1 Block" to="." method="_on_1_block_pressed"]
+[connection signal="pressed" from="Block_Section/10 Blocks" to="." method="_on_10_blocks_pressed"]
+[connection signal="pressed" from="Block_Section/50 Blocks" to="." method="_on_50_blocks_pressed"]
+[connection signal="pressed" from="Block_Section/100 Blocks" to="." method="_on_100_blocks_pressed"]
+[connection signal="pressed" from="Water_section/1 Water" to="." method="_on_1_water_pressed"]
+[connection signal="pressed" from="Water_section/10 Water" to="." method="_on_10_water_pressed"]
+[connection signal="pressed" from="Water_section/50 Water" to="." method="_on_50_water_pressed"]
+[connection signal="pressed" from="Water_section/Complete refill" to="." method="_on_complete_refill_pressed"]

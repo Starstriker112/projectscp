@@ -19,3 +19,5 @@ func _on_Start_pressed():
 func _on_Stop_pressed():
 	Global.generating_energy = false
 
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
