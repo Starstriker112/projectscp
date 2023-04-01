@@ -9,6 +9,7 @@ var waste = 0
 var money = 500
 var days = 0
 var months = 0
+var water = 100
 var timer = Timer.new()
 
 func _ready():
@@ -24,6 +25,8 @@ func _process(delta):
 	else:
 		pass
 		
+	if water > 100:
+		water = 100
 func _days_timeout():
 	print(str(days)+" "+str(months))
 	days += 1

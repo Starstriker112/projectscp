@@ -27,6 +27,10 @@ offset_top = 50.0
 offset_right = 138.0
 offset_bottom = 648.0
 
+[node name="Shop" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Shop"
+
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Test world"
@@ -39,11 +43,12 @@ text = "Power Generator"
 layout_mode = 2
 text = "Waste Filtrator and Collector"
 
-[node name="Shop" type="Button" parent="VBoxContainer"]
+[node name="WaterTank" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Shop"
+text = "Water Tank"
 
+[connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PowerGenerator" to="." method="_on_power_generator_pressed"]
 [connection signal="pressed" from="VBoxContainer/WasteCollector" to="." method="_on_waste_collector_pressed"]
-[connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="VBoxContainer/WaterTank" to="." method="_on_water_tank_pressed"]

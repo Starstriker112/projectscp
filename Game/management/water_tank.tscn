@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8dlvu45weeeh"]
+
+[ext_resource type="Script" path="res://Game/management/water_tank.gd" id="1_6hpwv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_345nc"]
+
+[sub_resource type="Gradient" id="Gradient_wp1ed"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c2t7s"]
+gradient = SubResource("Gradient_wp1ed")
+fill_to = Vector2(0, 1)
+
+[node name="water_tank" type="Node2D"]
+script = ExtResource("1_6hpwv")
+
+[node name="Mesh" type="MeshInstance2D" parent="."]
+position = Vector2(577, 287)
+scale = Vector2(389.504, 325)
+mesh = SubResource("BoxMesh_345nc")
+texture = SubResource("GradientTexture2D_c2t7s")
+
+[node name="Water Tank" type="Label" parent="."]
+offset_left = 524.0
+offset_top = 187.0
+offset_right = 610.0
+offset_bottom = 213.0
+text = "Water tank"
+
+[node name="Water Left" type="Label" parent="."]
+offset_left = 551.0
+offset_top = 350.0
+offset_right = 591.0
+offset_bottom = 376.0
+text = "0%"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
