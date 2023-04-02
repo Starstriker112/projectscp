@@ -18,7 +18,7 @@ var timer = Timer.new()
 
 func _ready():
 	var scene = self
-	timer.wait_time = 54000
+	timer.wait_time = 1800
 	timer.timeout.connect(_days_timeout)
 	scene.add_child(timer)
 	timer.start()
