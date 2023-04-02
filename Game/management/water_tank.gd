@@ -8,7 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Global.ui:
+		show()
+	else:
+		queue_free()
 	$"Water Left".text = str(Global.water)+"%"
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
+	queue_free()

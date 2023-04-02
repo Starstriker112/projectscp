@@ -1,5 +1,11 @@
 extends Control
 
+func _process(delta):
+	if Global.ui:
+		show()
+	else:
+		queue_free()
+
 func _on_1_block_pressed():
 	if Global.money >= 5:
 		Global.money -= 5

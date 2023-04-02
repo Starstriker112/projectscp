@@ -7,22 +7,24 @@ var col
 var parent_name
 
 func _ready():
-	parent_name = get_parent().name
 	col = get_node("CollisionShape2D")
+	show()
+	col.disabled = false
 
 func  _unhandled_input(event):
 	if Input.is_action_just_pressed("reset"):
 		queue_free()
 
 func _process(delta):
+	#print(get_parent().name)
 	if can_drag:
 		self.position = get_global_mouse_position()
-	if get_parent().name != parent_name:
-		hide()
-		$CollisionShape2D.disabled = true
-	else:
+	if Global.in_world:
 		show()
-		$CollisionShape2D.disabled = false
+		col.disabled = false
+	else:
+		hide()
+		col.disabled = true
 
 func _on_mouse_entered():
 	selected = true

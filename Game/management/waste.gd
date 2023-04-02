@@ -8,6 +8,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Global.ui:
+		show()
+	else:
+		queue_free()
 	$C_space.text = str(int(Global.waste))+"%"
 
 func _on_burn_waste_pressed():
@@ -15,4 +19,4 @@ func _on_burn_waste_pressed():
 
 
 func _on_back_pressed():
-	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
+	queue_free()

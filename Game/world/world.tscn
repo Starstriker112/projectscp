@@ -193,6 +193,12 @@ offset_bottom = 51.0
 text = "Hub
 "
 
+[node name="Pause" type="Button" parent="."]
+offset_left = 100.0
+offset_right = 155.0
+offset_bottom = 31.0
+text = "Pause/Resume"
+
 [node name="walk" parent="." instance=ExtResource("2_qvvwq")]
 position = Vector2(487, 369)
 
@@ -220,3 +226,4 @@ position = Vector2(802, 613)
 
 [connection signal="pressed" from="SCP_found" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Hub" to="." method="_on_hub_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]

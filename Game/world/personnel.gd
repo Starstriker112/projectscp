@@ -15,15 +15,16 @@ func _ready():
 	
 
 func _physics_process(delta):
-	if path.is_empty():
-		return
-	velocity = global_position.direction_to(path[0] + target) * movement_speed
-	move_and_slide()
-	
-	if global_position.distance_to(path[0]) <= 10:
-		path.pop_front()
-		target = Vector2(randfn(0, 2.5), randfn(0, 2.5))
-		print(target)
+	if Global.in_world:
+		if path.is_empty():
+			return
+		velocity = global_position.direction_to(path[0] + target) * movement_speed
+		move_and_slide()
+		
+		if global_position.distance_to(path[0]) <= 10:
+			path.pop_front()
+			target = Vector2(randfn(0, 2.5), randfn(0, 2.5))
+			print(target)
 
 func _on_water_timer_timeout():
 	if Global.water <= 0:
