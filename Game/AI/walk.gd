@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 400
 #var screenSize = get_viewport().get_visible_rect().size
 var target = position
+@onready var col = $CollisionShape2D
 
 func _ready():
 	var rng = RandomNumberGenerator.new()
@@ -15,6 +16,14 @@ func _physics_process(delta):
 		var collision = move_and_collide(velocity * delta)
 		if collision:
 			velocity = velocity.bounce(collision.get_normal())
+			
+func _process(delta):
+	if Global.in_world:
+		show()
+		col.disabled = false
+	else:
+		hide()
+		col.disabled = true
 
 func _on_timer_timeout():
 	if Global.in_world:
