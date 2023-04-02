@@ -13,6 +13,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6s3uh")
 
+[node name="BG" type="ColorRect" parent="."]
+offset_left = -578.0
+offset_top = -323.0
+offset_right = 574.0
+offset_bottom = 319.0
+color = Color(0.286275, 0.286275, 0.286275, 1)
+
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 529.0

@@ -12,6 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_un1j3")
 
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 642.0
+color = Color(0.286275, 0.286275, 0.286275, 1)
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 576.0

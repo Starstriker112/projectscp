@@ -8,6 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Global.ui:
+		show()
+	else:
+		queue_free()
+		
 	if Global.generating_energy:
 		label.text = "Generating energy"
 	else:
@@ -20,4 +25,4 @@ func _on_Stop_pressed():
 	Global.generating_energy = false
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Game/menus/Hub.tscn")
+	queue_free()

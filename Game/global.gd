@@ -12,6 +12,8 @@ var months = 0
 var water = 100
 var food_portions = 0
 var c_kits = 0
+var in_world = true
+var ui = false
 var timer = Timer.new()
 
 func _ready():
