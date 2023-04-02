@@ -93,8 +93,10 @@ func _on_hub_pressed():
 func _process(delta):
 	if Global.in_world:
 		$TileMap.show()
+		$TileMap.set_layer_enabled(0, true)
 	else:
 		$TileMap.hide()
+		$TileMap.set_layer_enabled(0, false)
 	$Blocks.text = "Blocks: "+str(Global.blocks)
 	$Money.text = "Money: "+str(Global.money)
 	$Day.text = "Day "+str(Global.days)

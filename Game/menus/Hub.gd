@@ -29,3 +29,8 @@ func _on_water_tank_pressed():
 	if Global.ui:
 		var water_tank = preload("res://Game/management/water_tank.tscn").instantiate()
 		get_parent().add_child(water_tank)
+
+func _on_scp_999_pressed():
+	if Global.ui:
+		var scp_999 = preload("res://Game/SCPs/999-containment.tscn").instantiate()
+		get_parent().add_child(scp_999)
