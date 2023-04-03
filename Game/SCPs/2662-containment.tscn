@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctek321jv0vom"]
+[gd_scene load_steps=5 format=3 uid="uid://dlfns6e3qxg00"]
 
-[ext_resource type="Script" path="res://Game/SCPs/999-containment.gd" id="1_d4osv"]
-[ext_resource type="PackedScene" uid="uid://dgcud3rabrauc" path="res://Game/SCPs/scp-999.tscn" id="2_vc78s"]
+[ext_resource type="Script" path="res://Game/SCPs/2662-containment.gd" id="1_bfdia"]
+[ext_resource type="PackedScene" uid="uid://b3ue6b5slyhak" path="res://Game/SCPs/scp-2662.tscn" id="2_mp0c5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqgfw"]
 size = Vector2(23, 648)
@@ -9,16 +9,16 @@ size = Vector2(23, 648)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wecx"]
 size = Vector2(1149, 23)
 
-[node name="999-containment" type="Node2D"]
-script = ExtResource("1_d4osv")
+[node name="2662-containment" type="Node2D"]
+script = ExtResource("1_bfdia")
 
 [node name="BG" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 642.0
 color = Color(0.286275, 0.286275, 0.286275, 1)
 
-[node name="SCP-999" parent="." instance=ExtResource("2_vc78s")]
-position = Vector2(744, 439)
+[node name="SCP-2662" parent="." instance=ExtResource("2_mp0c5")]
+position = Vector2(626, 371)
 
 [node name="Back" type="Button" parent="."]
 offset_left = 20.0

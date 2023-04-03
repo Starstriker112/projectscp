@@ -44,3 +44,8 @@ func _on_scp_173_pressed():
 	if Global.ui:
 		var scp_173 = preload("res://Game/SCPs/173-containment.tscn").instantiate()
 		get_parent().add_child(scp_173)
+
+func _on_scp_2662_pressed():
+	if Global.ui:
+		var scp_2662 = preload("res://Game/SCPs/2662-containment.tscn").instantiate()
+		get_parent().add_child(scp_2662)
