@@ -14,9 +14,12 @@ var food_portions = 0
 var c_kits = 0
 var in_world = true
 var ui = false
+var _173_personnel = 0
+var containment_breach = {"173"=false}
 var timer = Timer.new()
 
 func _ready():
+	print(containment_breach["173"])
 	var scene = self
 	timer.wait_time = 1800
 	timer.timeout.connect(_days_timeout)

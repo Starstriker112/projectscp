@@ -1,6 +1,6 @@
 extends Node2D
 
-func _process(_delta):
+func _process(delta):
 	if Global.ui:
 		show()
 	else:

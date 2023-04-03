@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctek321jv0vom"]
+[gd_scene load_steps=6 format=3 uid="uid://boirfkatshg8g"]
 
-[ext_resource type="Script" path="res://Game/SCPs/173-containment.gd" id="1_06n7e"]
+[ext_resource type="Script" path="res://Game/SCPs/173-containment.gd" id="1_npj8c"]
+[ext_resource type="PackedScene" uid="uid://c0rwshs6mrcqy" path="res://Game/SCPs/scp-173.tscn" id="2_y6t4p"]
+[ext_resource type="PackedScene" uid="uid://olf32fbnmnh6" path="res://personnel.tscn" id="3_4m4sp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqgfw"]
 size = Vector2(23, 648)
@@ -9,7 +11,7 @@ size = Vector2(23, 648)
 size = Vector2(1149, 23)
 
 [node name="173-containment" type="Node2D"]
-script = ExtResource("1_06n7e")
+script = ExtResource("1_npj8c")
 
 [node name="BG" type="ColorRect" parent="."]
 offset_right = 1152.0
@@ -22,6 +24,11 @@ offset_top = 20.0
 offset_right = 65.0
 offset_bottom = 51.0
 text = "Back"
+
+[node name="SCP-173" parent="." instance=ExtResource("2_y6t4p")]
+
+[node name="Personnel" parent="." instance=ExtResource("3_4m4sp")]
+position = Vector2(710, 346)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 

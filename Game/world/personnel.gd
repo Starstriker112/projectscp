@@ -8,6 +8,8 @@ signal get_walking_path
 var target = Vector2(400.5, 205.23)
 
 func _ready():
+	if get_owner().name == "173-containment":
+		Global._173_personnel += 1
 	$WaterTimer.start(240)
 	$WasteTimer.start(240)
 	$FoodTimer.start(360)

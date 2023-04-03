@@ -101,6 +101,3 @@ func _process(delta):
 	$Money.text = "Money: "+str(Global.money)
 	$Day.text = "Day "+str(Global.days)
 	$Month.text = "Month "+str(Global.months)
-
-func _on_pause_pressed():
-	Global.in_world = !Global.in_world
