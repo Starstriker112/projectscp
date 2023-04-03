@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://du2fxa8d45cm7"]
+
+[ext_resource type="Script" path="res://Game/SCPs/500-containment.gd" id="1_w45ej"]
+[ext_resource type="PackedScene" uid="uid://dllrxa77br737" path="res://Game/SCPs/scp-500.tscn" id="2_g7rt2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pqgfw"]
+size = Vector2(23, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6wecx"]
+size = Vector2(1149, 23)
+
+[node name="500-containment" type="Node2D"]
+script = ExtResource("1_w45ej")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 642.0
+color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[node name="scp-500" parent="." instance=ExtResource("2_g7rt2")]
+position = Vector2(541, 335)
+
+[node name="Back" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 65.0
+offset_bottom = 51.0
+text = "Back"
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Walls"]
+offset_right = 23.0
+offset_bottom = 650.0
+
+[node name="ColorRect2" type="ColorRect" parent="Walls"]
+offset_left = 1127.0
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="ColorRect3" type="ColorRect" parent="Walls"]
+offset_left = 1127.0
+offset_right = 1150.0
+offset_bottom = 1114.0
+rotation = 1.5708
+
+[node name="ColorRect4" type="ColorRect" parent="Walls"]
+offset_left = 1130.0
+offset_top = 628.0
+offset_right = 1153.0
+offset_bottom = 1742.0
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(10.5, 323)
+shape = SubResource("RectangleShape2D_pqgfw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1139, 324)
+shape = SubResource("RectangleShape2D_pqgfw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576.5, 10.5)
+shape = SubResource("RectangleShape2D_6wecx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576.5, 637)
+shape = SubResource("RectangleShape2D_6wecx")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
