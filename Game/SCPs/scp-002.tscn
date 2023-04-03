@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7k6taua0sgeo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_52cqg"]
+
+[sub_resource type="Gradient" id="Gradient_fuiau"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nhww8"]
+gradient = SubResource("Gradient_fuiau")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sen7f"]
+radius = 31.0
+
+[node name="scp-002" type="StaticBody2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(64.211, 60)
+mesh = SubResource("SphereMesh_52cqg")
+texture = SubResource("GradientTexture2D_nhww8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sen7f")
