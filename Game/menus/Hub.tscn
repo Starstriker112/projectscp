@@ -53,13 +53,23 @@ text = "Waste Filtrator and Collector"
 layout_mode = 2
 text = "Water Tank"
 
+[node name="SCP-005" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCP-005"
+
 [node name="SCP-999" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "SCP-999"
+
+[node name="SCP-173" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCP-173"
 
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PowerGenerator" to="." method="_on_power_generator_pressed"]
 [connection signal="pressed" from="VBoxContainer/WasteCollector" to="." method="_on_waste_collector_pressed"]
 [connection signal="pressed" from="VBoxContainer/WaterTank" to="." method="_on_water_tank_pressed"]
+[connection signal="pressed" from="VBoxContainer/SCP-005" to="." method="_on_scp_005_pressed"]
 [connection signal="pressed" from="VBoxContainer/SCP-999" to="." method="_on_scp_999_pressed"]
+[connection signal="pressed" from="VBoxContainer/SCP-173" to="." method="_on_scp_173_pressed"]
