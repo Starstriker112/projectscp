@@ -69,6 +69,11 @@ text = "SCP-173"
 layout_mode = 2
 text = "SCP-2662"
 
+[node name="SCP-002" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCP-002
+"
+
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PowerGenerator" to="." method="_on_power_generator_pressed"]
@@ -78,3 +83,4 @@ text = "SCP-2662"
 [connection signal="pressed" from="VBoxContainer/SCP-999" to="." method="_on_scp_999_pressed"]
 [connection signal="pressed" from="VBoxContainer/SCP-173" to="." method="_on_scp_173_pressed"]
 [connection signal="pressed" from="VBoxContainer/SCP-2662" to="." method="_on_scp_2662_pressed"]
+[connection signal="pressed" from="VBoxContainer/SCP-002" to="." method="_on_scp_002_pressed"]
