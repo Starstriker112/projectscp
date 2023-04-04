@@ -78,6 +78,14 @@ text = "SCP-002
 layout_mode = 2
 text = "SCP-500"
 
+[node name="SCP-106" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCP-106"
+
+[node name="SCP-040" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCP-040"
+
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PowerGenerator" to="." method="_on_power_generator_pressed"]
@@ -89,3 +97,5 @@ text = "SCP-500"
 [connection signal="pressed" from="VBoxContainer/SCP-2662" to="." method="_on_scp_2662_pressed"]
 [connection signal="pressed" from="VBoxContainer/SCP-002" to="." method="_on_scp_002_pressed"]
 [connection signal="pressed" from="VBoxContainer/SCP-500" to="." method="_on_scp_500_pressed"]
+[connection signal="pressed" from="VBoxContainer/SCP-106" to="." method="_on_scp_106_pressed"]
+[connection signal="pressed" from="VBoxContainer/SCP-040" to="." method="_on_scp_040_pressed"]

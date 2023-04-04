@@ -22,8 +22,11 @@ func _on_timer_timeout():
 			rndX = get_owner().get_node("Personnel").position.x
 			rndY = get_owner().get_node("Personnel").position.y
 		target = Vector2(rndX, rndY)
+		print("SCP-173 can move")
 		print(target)
 		look_at(target)
+	else:
+		print("SCP-173 can move")
 	var nextToggleSeconds = rng.randi_range(5, 10)
 	$Timer.start(nextToggleSeconds)
 
