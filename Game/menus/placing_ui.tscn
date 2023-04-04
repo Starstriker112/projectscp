@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3evh6fkr8hl0"]
+
+[ext_resource type="Script" path="res://Game/menus/placing_ui.gd" id="1_b02nt"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_gv6i4"]
+
+[node name="placing_ui" type="ColorRect"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -38.0
+offset_right = 53.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_b02nt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 299.0
+offset_bottom = 31.0
+
+[node name="Exit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="TestObject" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "1"
+icon = SubResource("ImageTexture_gv6i4")
+
+[node name="SCP" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "2"
+icon = SubResource("ImageTexture_gv6i4")
+
+[node name="AnimatedSprite" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "3"
+icon = SubResource("ImageTexture_gv6i4")
+
+[connection signal="pressed" from="HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="HBoxContainer/TestObject" to="." method="_on_test_object_pressed"]
+[connection signal="pressed" from="HBoxContainer/SCP" to="." method="_on_scp_pressed"]
+[connection signal="pressed" from="HBoxContainer/AnimatedSprite" to="." method="_on_animated_sprite_pressed"]

@@ -4,6 +4,7 @@ var test_object = preload("res://Game/objects/test_object.tscn")
 var walk_test = preload("res://Game/AI/walk.tscn")
 var scp_found = preload("res://Game/menus/scp_found.tscn")
 var animated_sprite = preload("res://Game/objects/animated_sprite.tscn")
+var place_ui = preload("res://Game/menus/placing_ui.tscn")
 var mode = 0
 @onready var astar = AStar2D.new()
 
@@ -75,6 +76,11 @@ func _unhandled_input(event):
 		Global.item_selected = 2
 	if event.is_action_pressed("item3"):
 		Global.item_selected = 3
+	if event.is_action_pressed("placing_ui"):
+		if !Global.p_ui_inst:
+			var p_ui = place_ui.instantiate()
+			get_parent().add_child(p_ui)
+			Global.p_ui_inst = true
 
 func _physics_process(delta):
 	_on_get_path($Personnel, $walk.global_position)
