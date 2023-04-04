@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dllrxa77br737"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4u6t2"]
+
+[sub_resource type="Curve" id="Curve_dh6is"]
+_data = [Vector2(0.0860215, 0.354545), 0.0, 0.0, 0, 0, Vector2(0.446237, 0.663636), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_x6uyj"]
+curve_x = SubResource("Curve_dh6is")
+
+[sub_resource type="SphereMesh" id="SphereMesh_of81s"]
+
+[sub_resource type="Curve" id="Curve_c5f8c"]
+_data = [Vector2(0.333333, 0.763636), 0.0, 0.0, 0, 0, Vector2(0.44086, 0.336364), 0.0, 0.0, 0, 0, Vector2(0.494624, 0.663636), 0.0, 0.0, 0, 0, Vector2(0.5, 0.981818), 0.0, 0.0, 0, 0, Vector2(0.784946, 0.5), 0.0, 0.0, 0, 0, Vector2(0.94086, 0.272727), 0.0, 0.0, 0, 0, Vector2(0.989247, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.481818), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="CurveTexture" id="CurveTexture_d5cia"]
+curve = SubResource("Curve_c5f8c")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dlllt"]
+radius = 30.1496
+
+[node name="scp-500" type="StaticBody2D"]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+position = Vector2(-13, -18)
+scale = Vector2(15, 13.5)
+mesh = SubResource("CapsuleMesh_4u6t2")
+texture = SubResource("CurveXYZTexture_x6uyj")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+position = Vector2(9, -17)
+scale = Vector2(15, 15.25)
+mesh = SubResource("CapsuleMesh_4u6t2")
+texture = SubResource("CurveXYZTexture_x6uyj")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(45, 41.986)
+mesh = SubResource("SphereMesh_of81s")
+texture = SubResource("CurveTexture_d5cia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_dlllt")
