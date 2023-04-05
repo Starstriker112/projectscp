@@ -60,12 +60,12 @@ func _on_scp_500_pressed():
 		var scp_500 = preload("res://Game/SCPs/500-containment.tscn").instantiate()
 		get_parent().add_child(scp_500)
 
-func _on_scp_106_pressed():
+func _on_scp_096_pressed():
 	if Global.ui:
-		var scp_106 = preload("res://Game/SCPs/106-containment.tscn").instantiate()
-		get_parent().add_child(scp_106)
+		var scp_096 = preload("res://Game/SCPs/096-containment.tscn").instantiate()
+		get_parent().add_child(scp_096)
 
-func _on_scp_040_pressed():
+func _on_scp_1507_pressed():
 	if Global.ui:
-		var scp_040 = preload("res://Game/SCPs/040-containment.tscn").instantiate()
-		get_parent().add_child(scp_040)
+		var scp_1507 = preload("res://Game/SCPs/1507-containment.tscn").instantiate()
+		get_parent().add_child(scp_1507)
