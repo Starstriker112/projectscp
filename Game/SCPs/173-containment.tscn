@@ -25,6 +25,13 @@ offset_right = 65.0
 offset_bottom = 51.0
 text = "Back"
 
+[node name="Collect Waste" type="Button" parent="."]
+offset_left = 80.0
+offset_top = 20.0
+offset_right = 188.0
+offset_bottom = 51.0
+text = "Collect Waste"
+
 [node name="SCP-173" parent="." instance=ExtResource("2_y6t4p")]
 
 [node name="Personnel" parent="." instance=ExtResource("3_4m4sp")]
@@ -70,4 +77,9 @@ shape = SubResource("RectangleShape2D_6wecx")
 position = Vector2(576.5, 637)
 shape = SubResource("RectangleShape2D_6wecx")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Collect Waste" to="." method="_on_collect_waste_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -16,6 +16,7 @@ var in_world = true
 var ui = false
 var _173_personnel = 0
 var p_ui_inst = false
+var collect_173_waste = false
 var containment_breach = {"173"=false}
 var timer = Timer.new()
 
