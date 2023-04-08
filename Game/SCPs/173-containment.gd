@@ -3,8 +3,8 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 
 func _ready():
-	#$Timer.start(rng.randi_range(60, 270))
-	$Timer.start(5)
+	$Timer.start(rng.randi_range(60, 270))
+	#$Timer.start(5)
 
 func _process(_delta):
 	if Global.ui:
