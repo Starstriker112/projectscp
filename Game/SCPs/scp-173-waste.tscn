@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://tbsd40tox8j8"]
+
+[ext_resource type="Script" path="res://Game/SCPs/scp-173-waste.gd" id="1_xpjyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4e5x"]
+size = Vector2(30, 30)
+
+[node name="scp-173-waste" type="ColorRect"]
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.694118, 0.196078, 0.054902, 1)
+script = ExtResource("1_xpjyf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(15, 15)
+shape = SubResource("RectangleShape2D_i4e5x")
