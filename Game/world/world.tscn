@@ -185,6 +185,20 @@ offset_right = 1136.0
 offset_bottom = 55.5
 text = "SCP found"
 
+[node name="Save" type="Button" parent="."]
+offset_left = 1038.0
+offset_top = 92.0
+offset_right = 1133.0
+offset_bottom = 130.0
+text = "Save"
+
+[node name="Load" type="Button" parent="."]
+offset_left = 1043.0
+offset_top = 174.0
+offset_right = 1138.0
+offset_bottom = 212.0
+text = "Load"
+
 [node name="Hub" type="Button" parent="."]
 offset_left = 976.0
 offset_top = 20.0
@@ -216,7 +230,11 @@ layer_1/tile_data = PackedInt32Array(524288, 65537, 0, 0, 65537, 0, 65536, 65537
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(802, 613)
 
-[node name="PowerUser" parent="." instance=ExtResource("5_sx0di")]
+[node name="BlocksNode" type="Node" parent="."]
+
+[node name="PowerUser" parent="BlocksNode" instance=ExtResource("5_sx0di")]
 
 [connection signal="pressed" from="SCP_found" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_scp_found_2_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Hub" to="." method="_on_hub_pressed"]
