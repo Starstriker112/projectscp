@@ -1,7 +1,7 @@
 extends Node2D
 
 var test_object = preload("res://Game/objects/test_object.tscn")
-var walk_test = preload("res://Game/AI/walk.tscn")
+var walk_test = preload("res://Game/objects/PowerUser.tscn")
 var scp_found = preload("res://Game/menus/scp_found.tscn")
 var animated_sprite = preload("res://Game/objects/animated_sprite.tscn")
 var place_ui = preload("res://Game/menus/placing_ui.tscn")
@@ -58,17 +58,17 @@ func _unhandled_input(event):
 				if Global.item_selected == 1:
 					var clone = test_object.instantiate()
 					clone.position = get_global_mouse_position()
-					get_parent().add_child(clone)
+					$BlocksNode.add_child(clone)
 					Global.blocks -= 1
 				elif Global.item_selected == 2:
 					var clone = walk_test.instantiate()
 					clone.position = get_global_mouse_position()
-					get_parent().add_child(clone)
+					$BlocksNode.add_child(clone)
 					Global.blocks -= 1
 				elif Global.item_selected == 3:
 					var clone = animated_sprite.instantiate()
 					clone.position = get_global_mouse_position()
-					get_parent().add_child(clone)
+					$BlocksNode.add_child(clone)
 					Global.blocks -= 1
 	if event.is_action_pressed("item1"):
 		Global.item_selected = 1
@@ -86,9 +86,10 @@ func _physics_process(delta):
 	_on_get_path($Personnel, $walk.global_position)
 
 func _on_button_pressed():
-	var i = scp_found.instantiate()
-	i.position.y = 10
-	get_parent().add_child(i)
+	print(Global.blocks_data)
+	#var i = scp_found.instantiate()
+	#i.position.y = 10
+	#get_parent().add_child(i)
 
 func _on_hub_pressed():
 	Global.in_world = false
@@ -107,3 +108,10 @@ func _process(delta):
 	$Money.text = "Money: "+str(Global.money)
 	$Day.text = "Day "+str(Global.days)
 	$Month.text = "Month "+str(Global.months)
+
+
+func _on_scp_found_2_pressed():
+	Global._save()
+
+func _on_load_pressed():
+	Global._load(self)
