@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://doj5st3yic8km"]
+
+[ext_resource type="Script" path="res://Game/menus/Basic Gameplay.gd" id="1_ov0m1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_frdsn"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3hlj"]
+font_size = 32
+
+[node name="Basic Gameplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ov0m1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.296875, 0.296875, 0.296875, 1)
+
+[node name="Back" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Back"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Basic Gameplay"
+label_settings = SubResource("LabelSettings_frdsn")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_j3hlj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "In the main menu, you will get two buttons: Play and Exit
+To start playing the game, click the Play button
+To exit, press the Exit buton"
+fit_content = true
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Scene"
+label_settings = SubResource("LabelSettings_j3hlj")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "In the main menu, you will see a Personnel chasin an SCP, as well as 4 buttons: Hub, Save, Load and SCP Found
+To save and load, press the respective buttons
+To load a simple test scene, press SCP Found
+If you press hub, press the Hub button"
+fit_content = true
+
+[connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
