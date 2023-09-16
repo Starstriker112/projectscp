@@ -29,6 +29,7 @@ func _on_collect_waste_pressed():
 	var w_timer = Timer.new()
 	w_timer.wait_time = 2
 	w_timer.timeout.connect(_on_waste_timer_timeout)
+	self.add_child(w_timer)
 	w_timer.start()
 
 func _on_waste_timer_timeout():
