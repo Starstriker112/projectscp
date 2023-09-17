@@ -69,3 +69,8 @@ func _on_scp_1507_pressed():
 	if Global.ui:
 		var scp_1507 = preload("res://Game/SCPs/1507-containment.tscn").instantiate()
 		get_parent().add_child(scp_1507)
+
+func _on_basic_gameplay_pressed():
+	if Global.ui:
+		var bg = preload("res://Game/menus/Basic Gameplay.tscn").instantiate()
+		get_parent().add_child(bg)

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqeijj3udc3h6"]
+[gd_scene load_steps=3 format=3 uid="uid://bqeijj3udc3h6"]
 
 [ext_resource type="Script" path="res://Game/menus/Hub.gd" id="1_un1j3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8b4fo"]
+line_spacing = 4.0
 
 [node name="Hub" type="Control"]
 editor_description = "This is where the player can enter in different scenes."
@@ -28,10 +31,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 50.0
-offset_right = 138.0
-offset_bottom = 648.0
+layout_mode = 2
+offset_top = 68.0
+offset_right = 230.0
+offset_bottom = 519.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
 
 [node name="Shop" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -53,50 +64,126 @@ text = "Waste Filtrator and Collector"
 layout_mode = 2
 text = "Water Tank"
 
-[node name="SCP-005" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = " "
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = " "
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = " "
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 234.0
+offset_top = 68.0
+offset_right = 436.0
+offset_bottom = 519.0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "SCPs"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="SCP-005" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-005"
 
-[node name="SCP-999" type="Button" parent="VBoxContainer"]
+[node name="SCP-999" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-999"
 
-[node name="SCP-173" type="Button" parent="VBoxContainer"]
+[node name="SCP-173" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-173"
 
-[node name="SCP-2662" type="Button" parent="VBoxContainer"]
+[node name="SCP-2662" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-2662"
 
-[node name="SCP-002" type="Button" parent="VBoxContainer"]
+[node name="SCP-002" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-002
 "
 
-[node name="SCP-500" type="Button" parent="VBoxContainer"]
+[node name="SCP-500" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-500"
 
-[node name="SCP-096" type="Button" parent="VBoxContainer"]
+[node name="SCP-096" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-096"
 
-[node name="SCP-1507" type="Button" parent="VBoxContainer"]
+[node name="SCP-1507" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "SCP-1507
 "
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 442.0
+offset_top = 68.0
+offset_right = 644.0
+offset_bottom = 519.0
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+text = "Help"
+label_settings = SubResource("LabelSettings_8b4fo")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer3"]
+layout_mode = 2
+
+[node name="Basic Gameplay" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = "Basic Gameplay"
+
+[node name="Controls" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = "Controls"
+
+[node name="Button4" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = " "
+
+[node name="Button5" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = " "
+
+[node name="Button6" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = " "
+
+[node name="Button7" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = " "
+
+[node name="Button8" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = " "
+
+[node name="Button9" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = " "
 
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PowerGenerator" to="." method="_on_power_generator_pressed"]
 [connection signal="pressed" from="VBoxContainer/WasteCollector" to="." method="_on_waste_collector_pressed"]
 [connection signal="pressed" from="VBoxContainer/WaterTank" to="." method="_on_water_tank_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-005" to="." method="_on_scp_005_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-999" to="." method="_on_scp_999_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-173" to="." method="_on_scp_173_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-2662" to="." method="_on_scp_2662_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-002" to="." method="_on_scp_002_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-500" to="." method="_on_scp_500_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-096" to="." method="_on_scp_096_pressed"]
-[connection signal="pressed" from="VBoxContainer/SCP-1507" to="." method="_on_scp_1507_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-005" to="." method="_on_scp_005_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-999" to="." method="_on_scp_999_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-173" to="." method="_on_scp_173_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-2662" to="." method="_on_scp_2662_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-002" to="." method="_on_scp_002_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-500" to="." method="_on_scp_500_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-096" to="." method="_on_scp_096_pressed"]
+[connection signal="pressed" from="VBoxContainer2/SCP-1507" to="." method="_on_scp_1507_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Basic Gameplay" to="." method="_on_basic_gameplay_pressed"]
