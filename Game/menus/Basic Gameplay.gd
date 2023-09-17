@@ -1,4 +1,5 @@
 extends Control
 
-func _on_back_pressed():
-	queue_free()
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		queue_free()

@@ -26,12 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.296875, 0.296875, 0.296875, 1)
 
-[node name="Back" type="Button" parent="ColorRect"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Back"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 1152.0
@@ -70,5 +64,3 @@ To save and load, press the respective buttons
 To load a simple test scene, press SCP Found
 If you press hub, press the Hub button"
 fit_content = true
-
-[connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
