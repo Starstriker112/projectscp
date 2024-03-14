@@ -34,7 +34,7 @@ text = "Collect Waste"
 
 [node name="SCP-173" parent="." instance=ExtResource("2_y6t4p")]
 
-[node name="Personnel" parent="." instance=ExtResource("3_4m4sp")]
+[node name="Personnel" parent="." groups=["173_pers"] instance=ExtResource("3_4m4sp")]
 position = Vector2(710, 346)
 
 [node name="Walls" type="StaticBody2D" parent="."]

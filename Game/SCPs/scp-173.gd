@@ -27,9 +27,9 @@ func _on_timer_timeout():
 	if Global._173_personnel <= 1:
 		var rndX = rng.randi_range(50, 500)
 		var rndY = rng.randi_range(30, 300)
-		if get_owner().has_node("Personnel"):
-			rndX = get_owner().get_node("Personnel").position.x
-			rndY = get_owner().get_node("Personnel").position.y
+		if len(Global.prey_173) > 0:
+			rndX = Global.prey_173[0].position.x
+			rndY = Global.prey_173[0].position.y
 		target = Vector2(rndX, rndY)
 		print(target)
 		look_at(target)
@@ -37,7 +37,6 @@ func _on_timer_timeout():
 	$Timer.start(nextToggleSeconds)
 
 func _on_area_2d_body_entered(body):
-	if Global._173_personnel <= 1:
-		if body.name == "Personnel":
-			get_owner().get_node(str(body.name)).queue_free()
-			Global._173_personnel -= 1
+	if Global._173_personnel >= 1:
+		if body.is_in_group("173_pers"):
+			get_owner().get_node(str(body.name)).die()
