@@ -5,11 +5,13 @@ var movement_delta: float
 var path: Array[Vector2] = []
 
 signal get_walking_path
+signal on_death
 var target = Vector2(400.5, 205.23)
 
 func _ready():
-	if get_owner().name == "173-containment":
+	if self.is_in_group("173_pers"):
 		Global._173_personnel += 1
+		Global.prey_173.append(self)
 	$WaterTimer.start(240)
 	$WasteTimer.start(240)
 	$FoodTimer.start(360)
@@ -59,3 +61,10 @@ func _on_bowel_timer_timeout():
 		Global.c_kits -= 1
 	print(Global.c_kits)
 	$FoodTimer.start(600)
+
+func die():
+	emit_signal("on_death")
+	if self.is_in_group("173_pers"):
+		Global._173_personnel -= 1
+		Global.prey_173.erase(self)
+	call_deferred("queue_free")
