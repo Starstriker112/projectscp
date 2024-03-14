@@ -38,7 +38,11 @@ wait_time = 360.0
 [node name="BowelTimer" type="Timer" parent="."]
 wait_time = 600.0
 
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="WaterTimer" to="." method="_on_water_timer_timeout"]
 [connection signal="timeout" from="WasteTimer" to="." method="_on_waste_timer_timeout"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
 [connection signal="timeout" from="BowelTimer" to="." method="_on_bowel_timer_timeout"]
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]

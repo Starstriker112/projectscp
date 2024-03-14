@@ -3,7 +3,7 @@ class_name Personnel extends CharacterBody2D
 var movement_speed := 200
 var movement_delta: float
 var path: Array[Vector2] = []
-
+var blink = false
 signal get_walking_path
 signal on_death
 var target = Vector2(400.5, 205.23)
@@ -16,10 +16,13 @@ func _ready():
 	$WasteTimer.start(240)
 	$FoodTimer.start(360)
 	$BowelTimer.start(600)
+	$BlinkTimer.start(randi_range(3, 6))
 	
 
 func _physics_process(delta):
 	if Global.in_world:
+		if blink:
+			blink = not blink
 		if path.is_empty():
 			return
 		velocity = global_position.direction_to(path[0] + target) * movement_speed
@@ -68,3 +71,8 @@ func die():
 		Global._173_personnel -= 1
 		Global.prey_173.erase(self)
 	call_deferred("queue_free")
+
+func _on_blink_timer_timeout():
+	blink = true
+	print("blink")
+	$BlinkTimer.start(randi_range(3, 6))
